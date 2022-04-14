@@ -9,9 +9,10 @@
 <body>
   <script src="vue.js"></script>
   <div id="app">
-    <div> {{ html }} </div>
-    <div v-html="html"></div>
-    
+    <a :href="url">Google</a> 
+
+    <!-- <div> {{ html }} </div> -->
+    <!-- <div v-html="html"></div> -->
     <!-- <p>{{ sayHi() }}</p> -->
     <!-- 同じ意味 -->
     <!-- <p v-text="message"></p> -->
@@ -23,16 +24,18 @@
     new Vue ({
       el: '#app',
       data: {
-        html: '<h1>h1です</h1>'
+        url: 'https://google.com'
+        
+        // html: '<h1>h1です</h1>'
         // message: 'Hello,World!'
         // number: 3,
         // ok: false
       },
       methods: {
-        sayHi() {
-          this.message = 'Hello, Vue.JS'
-          return 'Hi'
-        }
+        // sayHi() {
+        //   this.message = 'Hello, Vue.JS'
+        //   return 'Hi'
+        // }
         // reverseMessage: function() {
         //   this.message =
         //   this.message.split('').reverse().join('')
