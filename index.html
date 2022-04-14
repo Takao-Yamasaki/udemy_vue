@@ -10,8 +10,8 @@
   <script src="vue.js"></script>
   <div id="app">
     <p>現在{{ number }}回クリックされています</p>
-    <button v-on:click="countUp">カウントアップ</button>
-    <p v-on:mousemove="changeMousePosition">マウスを載せてください</p>
+    <button v-on:click="countUp(3)">カウントアップ</button>
+    <p v-on:mousemove="changeMousePosition(10, $event)">マウスを載せてください</p>
     <p>X:{{x}},Y:{{y}}</p>
     <!-- <a :[attribute]="url">Google</a>  -->
     <!-- <a v-bind="twitterObject">Twitter</a> -->
@@ -33,13 +33,13 @@
         y: 0
       },
       methods: {
-        countUp: function() {
-          this.number += 1
+        countUp: function(times) {
+          this.number += 1 * times
         },
-        changeMousePosition: function(event) {
+        changeMousePosition: function(divideNumber, event) {
           // console.log(event);
-          this.x = event.clientX;
-          this.y = event.clientY;
+          this.x = event.clientX / divideNumber;
+          this.y = event.clientY /divideNumber;
         }
       }
       // data: {
