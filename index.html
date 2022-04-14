@@ -10,20 +10,28 @@
   <script src="vue.js"></script>
   
   <div id="app">
-    <p> {{message}} </p>
+    <p> {{ message }} </p>
+    <p>{{ number + 5 }}</p>
+    <p>{{ ok ? 'YES' : 'NO' }}</p>
+    <p>{{ sayHi() }}</p>
     <button v-on:click="reverseMessage">メッセージ反転</button>
   </div>
   <script>
     new Vue ({
       el: '#app',
       data: {
-        message: 'Hello,World!'
+        message: 'Hello,World!',
+        number: 3,
+        ok: false
       },
       methods: {
-        reverseMessage: function() {
-          this.message =
-          this.message.split('').reverse().join('')
+        sayHi: function() {
+          return 'Hi';
         }
+        // reverseMessage: function() {
+        //   this.message =
+        //   this.message.split('').reverse().join('')
+        // }
       }
     })
   </script> 
