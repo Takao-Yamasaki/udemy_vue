@@ -8,25 +8,28 @@
 </head>
 <body>
   <script src="vue.js"></script>
-  
   <div id="app">
-    <p> {{ message }} </p>
-    <p>{{ number + 5 }}</p>
-    <p>{{ ok ? 'YES' : 'NO' }}</p>
+    <p v-once> {{ message }} </p>
     <p>{{ sayHi() }}</p>
-    <button v-on:click="reverseMessage">メッセージ反転</button>
+    
+    <!-- 同じ意味 -->
+    <!-- <p v-text="message"></p> -->
+    <!-- <p>{{ number + 5 }}</p> -->
+    <!-- <p>{{ ok ? 'YES' : 'NO' }}</p> -->
+    <!-- <button v-on:click="reverseMessage">メッセージ反転</button> -->
   </div>
   <script>
     new Vue ({
       el: '#app',
       data: {
-        message: 'Hello,World!',
-        number: 3,
-        ok: false
+        message: 'Hello,World!'
+        // number: 3,
+        // ok: false
       },
       methods: {
-        sayHi: function() {
-          return this.message;
+        sayHi() {
+          this.message = 'Hello, Vue.JS'
+          return 'Hi'
         }
         // reverseMessage: function() {
         //   this.message =
