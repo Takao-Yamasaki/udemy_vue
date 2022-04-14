@@ -9,9 +9,11 @@
 <body>
   <script src="vue.js"></script>
   <div id="app">
-    <a :[attribute]="url">Google</a> 
-    <a v-bind="twitterObject">Twitter</a>
+    <p>現在{{ number }}回クリックされています</p>
+    <button v-on:click="countUp">カウントアップ</button>
 
+    <!-- <a :[attribute]="url">Google</a>  -->
+    <!-- <a v-bind="twitterObject">Twitter</a> -->
     <!-- <div> {{ html }} </div> -->
     <!-- <div v-html="html"></div> -->
     <!-- <p>{{ sayHi() }}</p> -->
@@ -25,18 +27,26 @@
     new Vue ({
       el: '#app',
       data: {
-        url: 'https://google.com',
-        attribute: 'href',
-        twitterObject: {
-          href: 'https://twitter.com',
-          id: 31
+        number: 0
+      },
+      methods: {
+        countUp: function() {
+          this.number += 1
         }
+      }
+      // data: {
+      //   url: 'https://google.com',
+      //   attribute: 'href',
+      //   twitterObject: {
+      //     href: 'https://twitter.com',
+      //     id: 31
+      //   }
         // html: '<h1>h1です</h1>'
         // message: 'Hello,World!'
         // number: 3,
         // ok: false
-      },
-      methods: {
+      // },
+      // methods: {
         // sayHi() {
         //   this.message = 'Hello, Vue.JS'
         //   return 'Hi'
@@ -45,7 +55,7 @@
         //   this.message =
         //   this.message.split('').reverse().join('')
         // }
-      }
+      // }
     })
   </script> 
 </body>
